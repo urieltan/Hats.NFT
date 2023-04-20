@@ -1,0 +1,163 @@
+{
+  "contractName": "IERC5313",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for the Light Contract Ownership Standard. A standardized minimal interface required to identify an account that controls a contract _Available since v4.9._\",\"kind\":\"dev\",\"methods\":{\"owner()\":{\"details\":\"Gets the address of the owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/openzeppelin-contracts-master/contracts/interfaces/IERC5313.sol\":\"IERC5313\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/openzeppelin-contracts-master/contracts/interfaces/IERC5313.sol\":{\"keccak256\":\"0xe365b7c7179f5a2003a60f06128561ddc69df2f5c072ca13be5d0930ac85ca5e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://13601d4ac40f9a9f92239fe7564dce123958b1b6c63bc35a78470dcc3f573d94\",\"dweb:/ipfs/QmPVnWKD3Mmk8G89JBtDWdxTY2bVo7ymeJ4bxV7iaHi62n\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.0;\n\n/**\n * @dev Interface for the Light Contract Ownership Standard.\n *\n * A standardized minimal interface required to identify an account that controls a contract\n *\n * _Available since v4.9._\n */\ninterface IERC5313 {\n    /**\n     * @dev Gets the address of the owner.\n     */\n    function owner() external view returns (address);\n}\n",
+  "sourcePath": "/Users/urieltan/gitclones/ft5004/nft-project/contracts/openzeppelin-contracts-master/contracts/interfaces/IERC5313.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/openzeppelin-contracts-master/contracts/interfaces/IERC5313.sol",
+    "exportedSymbols": {
+      "IERC5313": [
+        9755
+      ]
+    },
+    "id": 9756,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 9747,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:23:62"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IERC5313",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 9748,
+          "nodeType": "StructuredDocumentation",
+          "src": "58:194:62",
+          "text": " @dev Interface for the Light Contract Ownership Standard.\n A standardized minimal interface required to identify an account that controls a contract\n _Available since v4.9._"
+        },
+        "fullyImplemented": false,
+        "id": 9755,
+        "linearizedBaseContracts": [
+          9755
+        ],
+        "name": "IERC5313",
+        "nameLocation": "263:8:62",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 9749,
+              "nodeType": "StructuredDocumentation",
+              "src": "278:54:62",
+              "text": " @dev Gets the address of the owner."
+            },
+            "functionSelector": "8da5cb5b",
+            "id": 9754,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "owner",
+            "nameLocation": "346:5:62",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 9750,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "351:2:62"
+            },
+            "returnParameters": {
+              "id": 9753,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 9752,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 9754,
+                  "src": "377:7:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 9751,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "377:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "376:9:62"
+            },
+            "scope": 9755,
+            "src": "337:49:62",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 9756,
+        "src": "253:135:62",
+        "usedErrors": []
+      }
+    ],
+    "src": "33:356:62"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-04-18T20:14:33.610Z",
+  "devdoc": {
+    "details": "Interface for the Light Contract Ownership Standard. A standardized minimal interface required to identify an account that controls a contract _Available since v4.9._",
+    "kind": "dev",
+    "methods": {
+      "owner()": {
+        "details": "Gets the address of the owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

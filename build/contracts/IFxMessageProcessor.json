@@ -1,0 +1,210 @@
+{
+  "contractName": "IFxMessageProcessor",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "stateId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "rootMessageSender",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "processMessageFromRoot",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.19+commit.7dd6d404\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"stateId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"rootMessageSender\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"processMessageFromRoot\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/openzeppelin-contracts-master/contracts/vendor/polygon/IFxMessageProcessor.sol\":\"IFxMessageProcessor\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/openzeppelin-contracts-master/contracts/vendor/polygon/IFxMessageProcessor.sol\":{\"keccak256\":\"0xcf105ebef706452e452d2f4257a4e08d372c00f7c5026069b01bb0b75cbdf718\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://707c0c7f8b1e61d13f08fcb5148975d1ca118f93954afbb7440c4a0dd8bfa90d\",\"dweb:/ipfs/QmSX6QPC6Mt2kyQayYbHMK74NYgLbeTdeSRBQ1MiDDo8c7\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.6.0) (vendor/polygon/IFxMessageProcessor.sol)\npragma solidity ^0.8.0;\n\ninterface IFxMessageProcessor {\n    function processMessageFromRoot(uint256 stateId, address rootMessageSender, bytes calldata data) external;\n}\n",
+  "sourcePath": "/Users/urieltan/gitclones/ft5004/nft-project/contracts/openzeppelin-contracts-master/contracts/vendor/polygon/IFxMessageProcessor.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/openzeppelin-contracts-master/contracts/vendor/polygon/IFxMessageProcessor.sol",
+    "exportedSymbols": {
+      "IFxMessageProcessor": [
+        40733
+      ]
+    },
+    "id": 40734,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 40723,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "121:23:257"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IFxMessageProcessor",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 40733,
+        "linearizedBaseContracts": [
+          40733
+        ],
+        "name": "IFxMessageProcessor",
+        "nameLocation": "156:19:257",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "9a7c4b71",
+            "id": 40732,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "processMessageFromRoot",
+            "nameLocation": "191:22:257",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 40730,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 40725,
+                  "mutability": "mutable",
+                  "name": "stateId",
+                  "nameLocation": "222:7:257",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 40732,
+                  "src": "214:15:257",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 40724,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "214:7:257",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 40727,
+                  "mutability": "mutable",
+                  "name": "rootMessageSender",
+                  "nameLocation": "239:17:257",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 40732,
+                  "src": "231:25:257",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 40726,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "231:7:257",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 40729,
+                  "mutability": "mutable",
+                  "name": "data",
+                  "nameLocation": "273:4:257",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 40732,
+                  "src": "258:19:257",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 40728,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:5:257",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "213:65:257"
+            },
+            "returnParameters": {
+              "id": 40731,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "287:0:257"
+            },
+            "scope": 40733,
+            "src": "182:106:257",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 40734,
+        "src": "146:144:257",
+        "usedErrors": []
+      }
+    ],
+    "src": "121:170:257"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.19+commit.7dd6d404.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.13",
+  "updatedAt": "2023-04-18T20:14:33.927Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
