@@ -9,7 +9,7 @@ import "./openzeppelin-contracts-master/contracts/access/Ownable.sol";
 import "./openzeppelin-contracts-master/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "./openzeppelin-contracts-master/contracts/utils/Counters.sol";
 
-contract pfpContract is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
+contract PfpContract is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ownable, ERC721Burnable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIdCounter;
 
@@ -19,19 +19,17 @@ contract pfpContract is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ow
         return "ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/";
     }
 
-    function pause() public onlyOwner {
-        _pause();
-    }
-
-    function unpause() public onlyOwner {
-        _unpause();
-    }
-
     function safeMint(address to, string memory uri) public onlyOwner {
         uint256 tokenId = _tokenIdCounter.current();
         _tokenIdCounter.increment();
         _safeMint(to, tokenId);
         _setTokenURI(tokenId, uri);
+    }
+
+    function mint(address to) public onlyOwner {
+        uint256 tokenId = _tokenIdCounter.current();
+        _tokenIdCounter.increment();
+        _mint(to, tokenId);
     }
 
     function _beforeTokenTransfer(address from, address to, uint256 tokenId, uint256 batchSize)
@@ -63,5 +61,9 @@ contract pfpContract is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, Ow
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
+    }
+
+    function ownerOf(uint256 tokenId) public view override(ERC721, IERC721) returns (address) {
+        return ERC721.ownerOf(tokenId);
     }
 }

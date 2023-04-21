@@ -4,11 +4,11 @@
 // Liu Yaqi (A0254426E)
 // Tan Hong Jie Uriel (A0184411M)
 
-const Hats = artifacts.require("./hats");
-const Pfp = artifacts.require("./bayc");
+const PfpContract = artifacts.require("PfpContract");
+const HatsNFT = artifacts.require("HatsNFT");
 
 module.exports = (deployer, network, accounts) => {
-    deployer.deploy(Pfp).then(() => {
-        return deployer.deploy(Hats, 1, Pfp.address);
+    deployer.deploy(PfpContract).then(() => {
+        return deployer.deploy(HatsNFT);
     });
 }
