@@ -46,11 +46,13 @@ contract("NFTAttach", (accounts) => {
     });
 
     it("check tokenURI", async () => {
-        let tokenURI1 = await nft1.tokenURI(tokenId1);
-        assert.equal(tokenURI1.toString(),'{"name":"Cap","description":"Bunny","attributes":[{"trait_type":"color","value":"Blue"},{"trait_type":"rarity","value":1}],"image":"ipfs://.png"}', tokenURI1);
+        let result = await nft1.tokenURI.call(tokenId1);
+        const reply = '{"name":"Cap","description":"Bunny","attributes":[{"trait_type":"color","value":"Blue"},{"trait_type":"rarity","value":1}],"image":"ipfs://0.png"}';
+
+        assert.equal(result, reply, "tokenURI is not correct");
         await nft1.attachHat(tokenId1, tokenId2, nft2.address, { from: accounts[1] });
         
         let tokenURI2 = await nft1.tokenURI(tokenId1);
-        assert.equal(tokenURI2, '{"name":"Cap","description":"Bunny","attributes":[{"trait_type":"color","value":"Blue"},{"trait_type":"rarity","value":1}],"image":"example.com/.png","pfp":ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/0}', tokenURI2);
+        assert.equal(tokenURI2, '{"name":"Cap","description":"Bunny","attributes":[{"trait_type":"color","value":"Blue"},{"trait_type":"rarity","value":1}],"image":"example.com/0.png","pfp":ipfs://QmeSjSinHpPnmXmspMjwiXyN6zS4E9zccariGR3jxcaWtq/0}', tokenURI2);
     });
 });

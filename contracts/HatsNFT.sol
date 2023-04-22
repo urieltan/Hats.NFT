@@ -63,7 +63,7 @@ contract HatsNFT is ERC721URIStorage {
                     '"name":"', hats[tokenId].name, '",',
                     '"description":"', hats[tokenId].design, '",',
                     '"attributes":[{"trait_type":"color","value":"', hats[tokenId].color, '"},{"trait_type":"rarity","value":', uintToString(hats[tokenId].rarity), '}],',
-                    '"image":"example.com/', tokenId, '.png",',
+                    '"image":"example.com/', uintToString(tokenId), '.png",',
                     '"pfp":', pfpTokenURI,
                 '}'
             ));
@@ -78,7 +78,7 @@ contract HatsNFT is ERC721URIStorage {
                 '"name":"', hat.name, '",',
                 '"description":"', hat.design, '",',
                 '"attributes":[{"trait_type":"color","value":"', hat.color, '"},{"trait_type":"rarity","value":', uintToString(hat.rarity), '}],',
-                '"image":"ipfs://', hatId, '.png"',
+                '"image":"ipfs://', uintToString(hatId), '.png"',
             '}'
         ));
         return json;
@@ -88,6 +88,9 @@ contract HatsNFT is ERC721URIStorage {
         uint256 maxlength = 100;
         bytes memory reversed = new bytes(maxlength);
         uint256 i = 0;
+        if (v == 0) {
+            reversed[i++] = bytes1(uint8(48));
+        }
         while (v != 0) {
             uint256 remainder = v % 10;
             v = v / 10;
