@@ -26,10 +26,11 @@ contract HatsMarket {
     }
 
     function unlist(uint256 id) public {
-        require(hatsContract.ownerOf(id) == address(this), "only owner can unlist");
         require(listings[id] > 0, "dice is not listed");
+        require(listingOwners[id] == msg.sender, "only owner can unlist");
         hatsContract.transferFrom(address(this), msg.sender, id);
         listings[id] = 0;
+        listingOwners[id] = address(0);
     }
 
     function checkPrice(uint256 id) public view returns(uint256) {
@@ -37,18 +38,13 @@ contract HatsMarket {
     }
 
     function buy(uint256 id) public payable {
+        require(listings[id] > 0, "dice is not listed");
+        require(msg.value >= listings[id], "not enough money");
         uint256 price = listings[id];
-        require(price > 0, "dice is not listed");
-        require(msg.value >= price, "insufficient funds");
-
-        uint256 receive_amount = price - commission;
-        uint256 refund_amount = msg.value - price;
-
-        payable(diceContract.getDicePrevOwner(id)).transfer(receive_amount);
-        payable(owner).transfer(commission);
-        if(refund_amount > 0){
-            payable(msg.sender).transfer(refund_amount);
-        }
-        diceContract.transfer(id, msg.sender);
+        address owner = listingOwners[id];
+        hatsContract.transferFrom(address(this), msg.sender, id);
+        listings[id] = 0;
+        listingOwners[id] = address(0);
+        payable(owner).transfer(price);
     }
 }
